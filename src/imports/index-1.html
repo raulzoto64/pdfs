@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brochure Corporativo A&amp;T BioNano</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --color-primary-dark: #1c5d15;
+        --color-primary-light: #abc685;
+        --color-accent-soft: #e8ff99;
+        --color-accent-yellow: #f7f9ce;
+        --color-cream: #fff6e7;
+        --color-text-dark: #1a2e1a;
+        --color-text-light: #556b55;
+        --font-title: "Montserrat", sans-serif;
+        --font-body: "Poppins", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--color-text-dark);
+        background-color: #f2f4f2;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* Container: estilo brochure (centrado) */
+      .brochure-container {
+        max-width: 794px;
+        width: 100%;
+        margin: 28px auto;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        border-radius: 0px;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--font-title);
+        margin-top: 0;
+      }
+
+      h2 {
+        color: var(--color-primary-dark);
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 28px;
+        text-align: center;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--color-primary-light);
+        margin: 10px auto 0;
+        border-radius: 2px;
+      }
+
+      p {
+        margin: 0 0 1.1rem 0;
+        color: var(--color-text-light);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(135deg, var(--color-primary-dark) 0%, #0d350b 100%);
+        color: white;
+        padding: 80px 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.16;
+        mix-blend-mode: overlay;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-logo {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        border: 3px solid var(--color-accent-soft);
+        padding: 15px 30px;
+        border-radius: 50px;
+        color: var(--color-accent-soft);
+      }
+
+      .isotipo-placeholder {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        flex-shrink: 0;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+        margin-bottom: 14px;
+        line-height: 1.08;
+        font-weight: 700;
+      }
+
+      .hero h3 {
+        font-size: 1.35rem;
+        font-weight: 300;
+        color: var(--color-accent-yellow);
+        margin: 0 auto 18px;
+        max-width: 640px;
+      }
+
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 7px 12px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(6px);
+      }
+
+      .hero-badge i {
+        color: var(--color-accent-soft);
+      }
+
+      /* Sections */
+      .section {
+        padding: 56px 60px;
+      }
+
+      .bg-light {
+        background: white;
+      }
+
+      .bg-cream {
+        background: var(--color-cream);
+      }
+
+      .bg-soft-green {
+        background: #f0f7ef;
+      }
+
+      /* Grids */
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      /* Who we are cards */
+      .mission-box {
+        text-align: center;
+        padding: 26px 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .mission-icon {
+        font-size: 2.4rem;
+        color: var(--color-primary-light);
+        margin-bottom: 14px;
+      }
+
+      .mini-kpis {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .mini-kpi {
+        background: #ffffff;
+        border: 1px solid #e6efe5;
+        border-radius: 12px;
+        padding: 14px 12px;
+        text-align: center;
+      }
+
+      .mini-kpi strong {
+        display: block;
+        font-size: 1.05rem;
+        color: var(--color-primary-dark);
+      }
+
+      .mini-kpi span {
+        display: block;
+        font-size: 0.75rem;
+        color: #6c7b6c;
+        margin-top: 2px;
+        font-weight: 600;
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        background-color: var(--color-primary-light);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+      }
+
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        right: -10px;
+        background-color: white;
+        border: 4px solid var(--color-primary-dark);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+        text-align: right;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .left::after {
+        right: -14px;
+      }
+
+      .right::after {
+        left: -14px;
+      }
+
+      .timeline-content {
+        padding: 14px 18px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .year {
+        font-weight: 800;
+        color: var(--color-primary-dark);
+        font-size: 1.15rem;
+      }
+
+      /* Team */
+      .team-card {
+        text-align: center;
+      }
+
+      .team-img {
+        width: 120px;
+        height: 120px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 auto 14px;
+        border: 3px solid var(--color-primary-light);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .team-name {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      .team-role {
+        font-size: 0.85rem;
+        color: #777;
+        font-style: italic;
+      }
+
+      /* Value prop */
+      .prop-card {
+        background: var(--color-primary-dark);
+        color: white;
+        padding: 22px 18px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .prop-card i {
+        font-size: 1.9rem;
+        margin-bottom: 12px;
+        color: var(--color-accent-soft);
+      }
+
+      .prop-card h4 {
+        margin-bottom: 8px;
+        color: var(--color-accent-yellow);
+        font-size: 0.98rem;
+      }
+
+      .prop-card p {
+        color: #eee;
+        font-size: 0.86rem;
+        margin: 0;
+      }
+
+      /* Technology section */
+      .tech-card {
+        background: white;
+        border-radius: 14px;
+        padding: 22px 22px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        border-top: 4px solid var(--color-primary-dark);
+      }
+
+      .tech-card h5 {
+        margin: 0 0 12px 0;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #607460;
+      }
+
+      .bullets {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--color-text-light);
+        font-size: 0.92rem;
+      }
+
+      .bullets li {
+        margin-bottom: 8px;
+      }
+
+      /* Products */
+      .product-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        border: 1px solid #eee;
+        position: relative;
+      }
+
+      .product-header {
+        padding: 24px 18px 16px;
+        text-align: center;
+        color: white;
+      }
+
+      .product-header i {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .product-header h3 {
+        margin: 0;
+        font-size: 1.18rem;
+      }
+
+      .product-body {
+        padding: 18px 20px 20px;
+      }
+
+      .product-tag {
+        display: inline-block;
+        background: var(--color-accent-soft);
+        color: var(--color-primary-dark);
+        font-size: 0.72rem;
+        font-weight: 800;
+        padding: 4px 10px;
+        border-radius: 999px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .product-desc {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .feature-list li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        padding-left: 18px;
+        position: relative;
+        color: var(--color-text-dark);
+      }
+
+      .feature-list li::before {
+        content: "✓";
+        color: var(--color-primary-light);
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .product-stat {
+        margin-top: 12px;
+        background: #f0f7ef;
+        border-radius: 10px;
+        padding: 9px 12px;
+        font-size: 0.82rem;
+        color: var(--color-primary-dark);
+        font-weight: 700;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .product-stat i {
+        color: var(--color-primary-light);
+      }
+
+      /* Sectors */
+      .sector-item {
+        text-align: center;
+        padding: 18px 14px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        transition: 0.2s;
+        background: white;
+      }
+
+      .sector-item i {
+        font-size: 1.9rem;
+        color: var(--color-primary-dark);
+        margin-bottom: 10px;
+      }
+
+      .sector-item span {
+        display: block;
+        font-weight: 700;
+        color: var(--color-text-dark);
+        font-size: 0.92rem;
+      }
+
+      /* Transformation */
+      .transform-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        margin-top: 10px;
+      }
+
+      .transform-card {
+        background: white;
+        border-radius: 14px;
+        padding: 20px 22px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        border-top: 4px solid var(--color-primary-dark);
+      }
+
+      .transform-card h5 {
+        font-family: var(--font-title);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--color-text-light);
+        margin: 0 0 14px 0;
+      }
+
+      .bar-group {
+        margin-bottom: 12px;
+      }
+
+      .bar-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      .bar-label .bad-label {
+        color: #c62828;
+      }
+
+      .bar-label .good-label {
+        color: var(--color-primary-dark);
+      }
+
+      .bar-track {
+        background: #f0f0f0;
+        border-radius: 6px;
+        height: 10px;
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        height: 100%;
+        border-radius: 6px;
+      }
+
+      .bar-fill.bad {
+        background: linear-gradient(90deg, #ef9a9a, #c62828);
+      }
+
+      .bar-fill.good {
+        background: linear-gradient(90deg, #81c784, #1c5d15);
+      }
+
+      .transform-summary {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        padding: 8px 12px;
+        background: #f0f7ef;
+        border-radius: 10px;
+        font-size: 0.82rem;
+        color: var(--color-primary-dark);
+        font-weight: 700;
+      }
+
+      .transform-summary i {
+        font-size: 1rem;
+        color: var(--color-primary-light);
+      }
+
+      /* Buyer persona */
+      .persona-card {
+        background: white;
+        padding: 26px;
+        border-left: 5px solid var(--color-primary-light);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 0 12px 12px 0;
+      }
+
+      .persona-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .persona-avatar {
+        width: 48px;
+        height: 48px;
+        background: #eee;
+        border-radius: 50%;
+        margin-right: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+      }
+
+      /* Implementation steps */
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .step {
+        background: white;
+        border: 1px solid #e6efe5;
+        border-radius: 14px;
+        padding: 16px;
+      }
+
+      .step strong {
+        display: block;
+        font-family: var(--font-title);
+        color: var(--color-primary-dark);
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+      }
+
+      .step p {
+        font-size: 0.86rem;
+        margin: 0;
+      }
+
+      /* Impact stats */
+      .stat-circle {
+        width: 150px;
+        height: 150px;
+        background: white;
+        border: 4px solid var(--color-primary-light);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-primary-dark);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 6px;
+        font-weight: 700;
+        padding: 0 10px;
+        color: #4c614c;
+      }
+
+      .pill-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 0 0 26px 0;
+      }
+
+      .pill {
+        background: #f0f7ef;
+        color: #1c5d15;
+        padding: 7px 14px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        border: 1px solid #abc685;
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--color-primary-dark);
+        color: white;
+        padding: 56px 60px;
+        text-align: center;
+      }
+
+      .footer p {
+        color: #d6d6d6;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 26px;
+        margin: 26px 0;
+        flex-wrap: wrap;
+      }
+
+      .contact-item i {
+        margin-right: 10px;
+        color: var(--color-primary-light);
+      }
+
+      .social-link {
+        color: white;
+        font-size: 1.5rem;
+        margin: 0 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 860px) {
+        .brochure-container {
+          margin: 0;
+          border-radius: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 44px 20px;
+        }
+
+        .hero {
+          padding: 40px 20px;
+        }
+
+        .grid-3,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .mini-kpis {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .transform-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .steps {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 2.4rem;
+        }
+
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-item::after {
+          left: 21px;
+        }
+
+        .left {
+          text-align: left;
+        }
+
+        .right {
+          left: 0;
+        }
+
+        .hero-logo {
+          padding: 20px 40px;
+        }
+
+        .hero-logo img {
+          height: 100px !important;
+        }
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+        .brochure-container {
+          margin: 0;
+          box-shadow: none;
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="brochure-container">
+      <!-- 1. PORTADA -->
+      <header class="hero">
+        <!-- PDF Download Button -->
+        <button 
+          onclick="downloadPDF()"
+          style="
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1c5d15;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+          "
+          onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.15)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.1)'"
+          onmousedown="this.style.transform='translateY(0)'"
+        >
+          <i class="fas fa-download"></i>
+          Descargar PDF
+        </button>
+        
+        <div class="hero-content">
+          <div class="hero-logo">
+            <img src="logo png.png" alt="A&T Logo" style="height: 80px; border-radius: 14px; flex-shrink: 0;" />
+          </div>
+          <h1>Bionanotecnología<br />que Transforma</h1>
+          <h3>
+            Soluciones antimicrobianas sostenibles para agricultura, industria y
+            floricultura de exportación.
+          </h3>
+
+          <div class="hero-badges">
+            <span class="hero-badge"><i class="fas fa-flask"></i> Base acuosa</span>
+            <span class="hero-badge"><i class="fas fa-shield-virus"></i> Amplio espectro</span>
+            <span class="hero-badge"><i class="fas fa-leaf"></i> Ruta verde</span>
+            <span class="hero-badge"><i class="fas fa-globe-americas"></i> Enfoque exportador</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. QUIÉNES SOMOS -->
+      <section class="section bg-light">
+        <h2>Quiénes Somos</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 14px; font-size: 1.05rem">
+          Somos una empresa de base tecnológica fundada en 2021 en Colombia,
+          liderada por científicas con más de 20 años de experiencia en
+          investigación y docencia universitaria. Desarrollamos soluciones
+          antimicrobianas sostenibles que reemplazan químicos tóxicos, reducen
+          pérdidas productivas y habilitan el acceso a mercados premium con
+          exigencia de baja residualidad.
+        </p>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 24px; font-size: 0.95rem; color: #707d70">
+          Nuestra tecnología se basa en procesos biotecnológicos de obtención de
+          nanopartículas minerales con enfoque de bioseguridad y desempeño.
+        </p>
+
+        <div class="grid-3">
+          <div class="mission-box">
+            <i class="fas fa-microscope mission-icon"></i>
+            <h4>Ciencia Aplicada</h4>
+            <p style="font-size: 0.9rem">
+              Investigación y desarrollo orientado a resultados medibles en
+              campo, planta y postcosecha.
+            </p>
+          </div>
+          <div class="mission-box">
+            <i class="fas fa-lightbulb mission-icon"></i>
+            <h4>Innovación Real</h4>
+            <p style="font-size: 0.9rem">
+              Nanotecnología y materiales aplicados a problemas críticos:
+              patógenos, biofilms y control microbiológico.
+            </p>
+          </div>
+          <div class="mission-box">
+            <i class="fas fa-globe-americas mission-icon"></i>
+            <h4>Sostenibilidad</h4>
+            <p style="font-size: 0.9rem">
+              Alineación con Agenda 2030: ODS 2, 3, 12 y 15, priorizando reducción
+              de vertimientos y sustitución de sustancias peligrosas.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-kpis" aria-label="Indicadores clave">
+          <div class="mini-kpi"><strong>+20 años</strong><span>Experiencia científica</span></div>
+          <div class="mini-kpi"><strong>2021</strong><span>Fundación</span></div>
+          <div class="mini-kpi"><strong>3 líneas</strong><span>Portafolio</span></div>
+          <div class="mini-kpi"><strong>Exportación</strong><span>Enfoque de mercado</span></div>
+        </div>
+      </section>
+
+      <!-- 3. NUESTRA HISTORIA -->
+      <section class="section bg-cream">
+        <h2>Nuestra Historia</h2>
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <div class="year">2003</div>
+              <p style="margin: 0; font-size: 0.92rem">
+                Encuentro de las fundadoras en Brasil durante sus doctorados en
+                Materiales y Nanotecnología.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <div class="year">2020</div>
+              <p style="margin: 0; font-size: 0.92rem">
+                Unión para transferir conocimiento científico al sector productivo
+                y acelerar soluciones de ruta verde.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <div class="year">2021</div>
+              <p style="margin: 0; font-size: 0.92rem">
+                Formalización de A&amp;T BioNano y participación en convocatorias de
+                innovación para el registro y fortalecimiento tecnológico.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <div class="year">2022</div>
+              <p style="margin: 0; font-size: 0.92rem">
+                Consolidación del equipo de desarrollo, ampliando capacidades de
+                formulación, caracterización y escalamiento.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <div class="year">2024</div>
+              <p style="margin: 0; font-size: 0.92rem">
+                Fortalecimiento del portafolio y procesos de certificación para
+                bioproductos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. EQUIPO -->
+      <section class="section bg-light">
+        <h2>Liderazgo Científico</h2>
+        <div class="grid-3">
+          <div class="team-card">
+            <div
+              class="team-img"
+              style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80')"
+            ></div>
+            <span class="team-name">Dra. Ana Elisa Casas</span>
+            <span class="team-role">Cofundadora · PhD en Materiales<br />+20 años en investigación científica</span>
+          </div>
+          <div class="team-card">
+            <div
+              class="team-img"
+              style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80')"
+            ></div>
+            <span class="team-name">Dra. Tatiana Pinada</span>
+            <span class="team-role">Cofundadora · PhD en Nanotecnología<br />Transferencia tecnológica</span>
+          </div>
+          <div class="team-card">
+            <div
+              class="team-img"
+              style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"
+            ></div>
+            <span class="team-name">Ing. Juan Pablo Barera</span>
+            <span class="team-role">Desarrollo de productos<br />Ingeniería en Nanotecnología</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PROPUESTA DE VALOR -->
+      <section class="section bg-soft-green">
+        <h2>Propuesta de Valor</h2>
+        <div class="grid-3">
+          <div class="prop-card">
+            <i class="fas fa-bullseye"></i>
+            <h4>Eficiencia 99.9%</h4>
+            <p>Control antimicrobiano con dosis significativamente menores que alternativas convencionales.</p>
+          </div>
+          <div class="prop-card">
+            <i class="fas fa-check-circle"></i>
+            <h4>Residuo Cero</h4>
+            <p>Formulaciones orientadas a bioseguridad y reducción de riesgos de residualidad en exportación.</p>
+          </div>
+          <div class="prop-card">
+            <i class="fas fa-coins"></i>
+            <h4>Optimización</h4>
+            <p>Reducción de vertimientos y consumos críticos (agua, pigmentos, reprocesos) con impacto en costos.</p>
+          </div>
+          <div class="prop-card">
+            <i class="fas fa-globe"></i>
+            <h4>Impacto ODS</h4>
+            <p>ODS 2, 3, 12 y 15: producción responsable, salud y protección de ecosistemas.</p>
+          </div>
+          <div class="prop-card">
+            <i class="fas fa-rocket"></i>
+            <h4>Rentabilidad</h4>
+            <p>Salva producción, mejora vida útil y reduce rechazos por calidad o contaminación.</p>
+          </div>
+          <div class="prop-card">
+            <i class="fas fa-award"></i>
+            <h4>Respaldo</h4>
+            <p>Equipo PhD y estrategia de propiedad intelectual y validación técnico-científica.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. NUESTRA TECNOLOGÍA -->
+      <section class="section bg-light">
+        <h2>Nuestra Tecnología</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 26px; font-size: 0.98rem">
+          Un enfoque de "ruta verde" que integra biotecnología, nanotecnología y
+          formulación para crear soluciones antimicrobianas de alto desempeño,
+          seguras y sostenibles.
+        </p>
+        <div class="grid-3">
+          <div class="tech-card">
+            <h5><i class="fas fa-leaf" style="margin-right: 8px; color: var(--color-primary-light)"></i>Enfoque Ruta Verde</h5>
+            <ul class="bullets">
+              <li>Procesos orientados a reducir impacto ambiental.</li>
+              <li>Disminución de dependencia de químicos tóxicos.</li>
+              <li>Compatibilidad con objetivos de producción responsable.</li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h5><i class="fas fa-shield-virus" style="margin-right: 8px; color: var(--color-primary-light)"></i>Acción Antimicrobiana</h5>
+            <ul class="bullets">
+              <li>Control de patógenos fúngicos y bacterianos.</li>
+              <li>Reducción de biofilms y contaminación cruzada.</li>
+              <li>Aplicación sobre superficies, materiales y productos.</li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h5><i class="fas fa-scale-balanced" style="margin-right: 8px; color: var(--color-primary-light)"></i>Bioseguridad &amp; Cumplimiento</h5>
+            <ul class="bullets">
+              <li>Formulaciones inocuas para uso y manipulación.</li>
+              <li>Enfoque en baja residualidad para exportación.</li>
+              <li>Soporte técnico para adopción y escalamiento.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PRODUCTOS -->
+      <section class="section bg-cream">
+        <h2>Nuestros Productos</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 0.98rem">
+          Tres líneas de soluciones bionanotecnológicas especializadas. Base
+          acuosa, acción de amplio espectro y enfoque exportador.
+        </p>
+        
+        <!-- Logo -->
+        <div style="text-align: center; margin-bottom: 40px;">
+          <img 
+            src="logo 2.png" 
+            alt="Logo A&T BioNano" 
+            style="max-width: 200px; height: auto;"
+          />
+        </div>
+
+        <div class="grid-3">
+          <!-- BNX -->
+          <div class="product-card">
+            <div class="product-header" style="background: linear-gradient(135deg, #1c5d15, #0d350b)">
+              <i class="fas fa-leaf"></i>
+              <h3>Bionanoaxus®</h3>
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Agrícola</span>
+              <p class="product-desc">
+                Fungicida-bactericida de amplio espectro para control de enfermedades fitopatológicas.
+              </p>
+              <ul class="feature-list">
+                <li>Control de hongos y bacterias</li>
+                <li>Protección en campo y postcosecha</li>
+                <li>Aplicable a frutas tropicales</li>
+                <li>Baja residualidad</li>
+                <li>Extiende vida útil</li>
+              </ul>
+              <div class="product-stat"><i class="fas fa-chart-line"></i> Reduce pérdidas y rechazos</div>
+            </div>
+          </div>
+
+          <!-- Z-Klean -->
+          <div class="product-card">
+            <div class="product-header" style="background: linear-gradient(135deg, #558b2f, #33691e)">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Z-Klean</h3>
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Industrial</span>
+              <p class="product-desc">
+                Composición antimicrobiana para superficies y materiales.
+              </p>
+              <ul class="feature-list">
+                <li>Protección de superficies industriales</li>
+                <li>Aditivo en pinturas y recubrimientos</li>
+                <li>Control microbiano en construcción</li>
+                <li>Tratamiento de aguas residuales</li>
+                <li>Alta eficacia en dosis bajas</li>
+              </ul>
+              <div class="product-stat"><i class="fas fa-tint-slash"></i> Reduce vertimientos contaminantes</div>
+            </div>
+          </div>
+
+          <!-- Z-Flower -->
+          <div class="product-card">
+            <div class="product-header" style="background: linear-gradient(135deg, #7cb342, #558b2f)">
+              <i class="fas fa-fan"></i>
+              <h3>Z-Flower®</h3>
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Floricultura</span>
+              <p class="product-desc">
+                Solución especializada para exportación florícola.
+              </p>
+              <ul class="feature-list">
+                <li>Protección durante transporte</li>
+                <li>Control de enfermedades en postcosecha</li>
+                <li>Prolonga vida útil de flores</li>
+                <li>Compatible con protocolos de exportación</li>
+                <li>Reducción de daños mecánicos</li>
+              </ul>
+              <div class="product-stat"><i class="fas fa-palette"></i> Optimiza costos y estabilidad del proceso</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. SECTORES -->
+      <section class="section bg-light">
+        <h2>Sectores de Aplicación</h2>
+        <p style="text-align: center; max-width: 680px; margin: 0 auto 26px; font-size: 0.98rem">
+          Adaptamos formulaciones y protocolos a cada industria: desde
+          agroexportación y postcosecha hasta manufactura y materiales.
+        </p>
+        <div class="grid-3" style="gap: 18px">
+          <div class="sector-item"><i class="fas fa-seedling"></i><span>Agroindustria</span></div>
+          <div class="sector-item"><i class="fas fa-palette"></i><span>Pinturas y Recubrimientos</span></div>
+          <div class="sector-item"><i class="fas fa-city"></i><span>Construcción Civil</span></div>
+          <div class="sector-item"><i class="fas fa-box-open"></i><span>Empaques y Textiles</span></div>
+          <div class="sector-item"><i class="fas fa-water"></i><span>Tratamiento de Aguas</span></div>
+          <div class="sector-item"><i class="fas fa-flask"></i><span>Industria de Alimentos</span></div>
+        </div>
+      </section>
+
+      <!-- 9. TRANSFORMACIÓN REAL -->
+      <section class="section bg-cream">
+        <h2>Transformación Real</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 0.98rem">
+          Comparativa entre el estado <span style="color: #c62828; font-weight: 800">antes</span> y
+          <span style="color: var(--color-primary-dark); font-weight: 800">después</span> de implementar nuestras soluciones.
+        </p>
+
+        <div class="transform-grid">
+          <div class="transform-card">
+            <h5><i class="fas fa-seedling" style="margin-right: 6px; color: var(--color-primary-light)"></i>Pérdidas en Cosecha</h5>
+            <div class="bar-group">
+              <div class="bar-label"><span class="bad-label">❌ Sin BioNano — 50% pérdidas</span><span class="bad-label">50%</span></div>
+              <div class="bar-track"><div class="bar-fill bad" style="width: 50%"></div></div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label"><span class="good-label">✅ Con BioNano — 20% pérdidas</span><span class="good-label">20%</span></div>
+              <div class="bar-track"><div class="bar-fill good" style="width: 20%"></div></div>
+            </div>
+            <div class="transform-summary"><i class="fas fa-arrow-trend-down"></i> Reducción del 60% en pérdidas</div>
+          </div>
+
+          <div class="transform-card">
+            <h5><i class="fas fa-water" style="margin-right: 6px; color: var(--color-primary-light)"></i>Vertimientos al Medio Ambiente</h5>
+            <div class="bar-group">
+              <div class="bar-label"><span class="bad-label">❌ Sin BioNano — 100%</span><span class="bad-label">100%</span></div>
+              <div class="bar-track"><div class="bar-fill bad" style="width: 100%"></div></div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label"><span class="good-label">✅ Con BioNano — 10%</span><span class="good-label">10%</span></div>
+              <div class="bar-track"><div class="bar-fill good" style="width: 10%"></div></div>
+            </div>
+            <div class="transform-summary"><i class="fas fa-leaf"></i> -90% de vertimientos contaminantes</div>
+          </div>
+
+          <div class="transform-card">
+            <h5><i class="fas fa-palette" style="margin-right: 6px; color: var(--color-primary-light)"></i>Uso de Pigmentos en Pinturas</h5>
+            <div class="bar-group">
+              <div class="bar-label"><span class="bad-label">❌ Sin BioNano — 100%</span><span class="bad-label">100%</span></div>
+              <div class="bar-track"><div class="bar-fill bad" style="width: 100%"></div></div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label"><span class="good-label">✅ Con BioNano — 30%</span><span class="good-label">30%</span></div>
+              <div class="bar-track"><div class="bar-fill good" style="width: 30%"></div></div>
+            </div>
+            <div class="transform-summary"><i class="fas fa-coins"></i> -70% en costos de pigmentos</div>
+          </div>
+
+          <div class="transform-card">
+            <h5><i class="fas fa-globe" style="margin-right: 6px; color: var(--color-primary-light)"></i>Rechazo en Exportación</h5>
+            <div class="bar-group">
+              <div class="bar-label"><span class="bad-label">❌ Sin BioNano — alto rechazo</span><span class="bad-label">~60%</span></div>
+              <div class="bar-track"><div class="bar-fill bad" style="width: 60%"></div></div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label"><span class="good-label">✅ Con BioNano — mínimo rechazo</span><span class="good-label">~5%</span></div>
+              <div class="bar-track"><div class="bar-fill good" style="width: 5%"></div></div>
+            </div>
+            <div class="transform-summary"><i class="fas fa-star"></i> Acceso a mercados premium (Europa/Asia)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. ¿PARA QUIÉN TRABAJAMOS? -->
+      <section class="section bg-light">
+        <h2>¿Para quién trabajamos?</h2>
+        <div class="grid-2">
+          <div class="persona-card">
+            <div class="persona-title">
+              <div class="persona-avatar"><i class="fas fa-ship"></i></div>
+              <h4 style="margin: 0">El Exportador Residuo Cero</h4>
+            </div>
+            <p style="font-size: 0.92rem; margin-bottom: 6px">
+              <strong>Perfil:</strong> Gerencias de calidad y dirección técnica en
+              agroexportación.
+            </p>
+            <p style="font-size: 0.92rem; margin-bottom: 6px">
+              <strong>Dolor:</strong> Pérdidas por patógenos en cosecha y
+              postcosecha; rechazos por residualidad o deterioro.
+            </p>
+            <p style="font-size: 0.92rem; margin-bottom: 0">
+              <strong>Cómo ayudamos:</strong> protocolos de control antimicrobiano
+              con enfoque en calidad, vida útil y cumplimiento de mercados.
+            </p>
+          </div>
+
+          <div class="persona-card">
+            <div class="persona-title">
+              <div class="persona-avatar"><i class="fas fa-cogs"></i></div>
+              <h4 style="margin: 0">El Integrador Tecnológico</h4>
+            </div>
+            <p style="font-size: 0.92rem; margin-bottom: 6px">
+              <strong>Perfil:</strong> I+D industrial, formuladores y fabricantes
+              de materiales.
+            </p>
+            <p style="font-size: 0.92rem; margin-bottom: 6px">
+              <strong>Dolor:</strong> necesidad de aditivos antimicrobianos
+              eficaces sin toxicidad, con presiones regulatorias crecientes.
+            </p>
+            <p style="font-size: 0.92rem; margin-bottom: 0">
+              <strong>Cómo ayudamos:</strong> integración como aditivo funcional y
+              soporte técnico para escalamiento y validación.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. IMPLEMENTACIÓN -->
+      <section class="section bg-soft-green">
+        <h2>Cómo Implementamos</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 18px; font-size: 0.98rem">
+          Un proceso simple para pasar de la necesidad al resultado medible.
+        </p>
+
+        <div class="steps" aria-label="Proceso de implementación">
+          <div class="step">
+            <strong>1) Diagnóstico</strong>
+            <p>Levantamiento de problema, variables críticas y condiciones reales de operación.</p>
+          </div>
+          <div class="step">
+            <strong>2) Piloto</strong>
+            <p>Pruebas controladas en campo/planta para ajustar dosis, tiempos y protocolo.</p>
+          </div>
+          <div class="step">
+            <strong>3) Validación</strong>
+            <p>Indicadores: reducción de pérdidas, contaminación, reprocesos y costo total.</p>
+          </div>
+          <div class="step">
+            <strong>4) Escalamiento</strong>
+            <p>Adopción operativa, acompañamiento y mejora continua con soporte técnico.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. IMPACTO Y RESPALDO -->
+      <section class="section bg-light">
+        <h2>Impacto y Respaldo</h2>
+        <div class="pill-row">
+          <span class="pill"><i class="fas fa-trophy"></i> Propiedad intelectual</span>
+          <span class="pill"><i class="fas fa-university"></i> Equipo PhD</span>
+          <span class="pill"><i class="fas fa-check-double"></i> Enfoque de validación</span>
+          <span class="pill"><i class="fas fa-certificate"></i> Ruta de certificación</span>
+        </div>
+
+        <div class="grid-3" style="grid-template-columns: repeat(4, 1fr)">
+          <div class="stat-circle">
+            <span class="stat-number">99.9%</span>
+            <span class="stat-label">Eficacia antimicrobiana</span>
+          </div>
+          <div class="stat-circle">
+            <span class="stat-number">-90%</span>
+            <span class="stat-label">Vertimientos</span>
+          </div>
+          <div class="stat-circle">
+            <span class="stat-number">-70%</span>
+            <span class="stat-label">Costos pigmentos</span>
+          </div>
+          <div class="stat-circle">
+            <span class="stat-number">30%</span>
+            <span class="stat-label">Recuperación operativa</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. CONTACTO -->
+      <footer class="footer">
+        <div class="hero-logo" style="border-color: white; color: white; margin-bottom: 18px">
+          <img src="logo png.png" alt="A&T Logo" style="height: 80px; border-radius: 14px; flex-shrink: 0;" />
+        </div>
+        <h3>Juntos construimos un futuro sostenible</h3>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:aytbionano@gmail.com">aytbionano@gmail.com</a>
+          </div>
+          <div class="contact-item"><i class="fas fa-phone"></i> +57 305 460 22 46</div>
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Colombia</div>
+        </div>
+
+        <div>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <p style="margin-top: 26px; font-size: 0.8rem; opacity: 0.75">
+          © 2026 A&T BioNano SAS. Todos los derechos reservados.
+        </p>
+      </footer>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    
+    <!-- jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <script>
+      // PDF download function
+      function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+        const brochure = document.querySelector('.brochure-container');
+        const downloadBtn = document.querySelector('button[onclick="downloadPDF()"]');
+        
+        // Hide download button
+        downloadBtn.style.display = 'none';
+        
+        // Show loading indicator without replacing body
+        const loadingDiv = document.createElement('div');
+        loadingDiv.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.95);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+          font-family: 'Montserrat', sans-serif;
+          color: #1c5d15;
+        `;
+        loadingDiv.innerHTML = `
+          <div style="font-size: 3rem; margin-bottom: 20px;">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+          <h2 style="font-size: 2rem; margin-bottom: 10px;">Generando PDF...</h2>
+          <p style="font-size: 1.2rem; color: #556b55;">Por favor espere</p>
+        `;
+        document.body.appendChild(loadingDiv);
+        
+        // Generate PDF from the existing element
+        html2canvas(brochure, {
+          scale: 2,
+          useCORS: true,
+          logging: false
+        }).then(canvas => {
+          const imgData = canvas.toDataURL('image/jpeg', 0.95);
+          const imgWidth = 210; // A4 width in mm
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+          
+          // Create PDF with custom page size to fit all content in one page
+          const pdf = new jsPDF('p', 'mm', [imgWidth, imgHeight]);
+          
+          // Add the entire content as a single page
+          pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+          
+          // Download PDF
+          pdf.save('brochure_bionano.pdf');
+          
+          // Show download button again
+          downloadBtn.style.display = 'flex';
+          
+          // Remove loading indicator
+          document.body.removeChild(loadingDiv);
+        }).catch(error => {
+          console.error('Error generating PDF:', error);
+          // Show download button again even if there's an error
+          downloadBtn.style.display = 'flex';
+          document.body.removeChild(loadingDiv);
+          alert('Error generating PDF. Please try again.');
+        });
+      }
+    </script>
+  </body>
+</html>
